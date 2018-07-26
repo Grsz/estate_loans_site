@@ -1,0 +1,714 @@
+html * {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+    
+}
+.but {
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	z-index: 1;
+	width: 2vw;
+	height: 2vw;
+	text-align: center
+	
+}
+#constart{
+	position: fixed;
+	background-color: rgb(255, 255, 255);
+	z-index: 5;
+	bottom: 0;
+	display: none;
+	list-style-type: none
+}
+#constart .console{
+	float: left;
+	display: block;
+	width: 10vw
+}
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 4.5vw;
+	background-color: white;
+}
+
+h1{
+	font-size: 130%
+}
+.intro{
+	width: 100vw;
+	position: fixed;
+	z-index: 11;
+	height: 100vh;
+	display: block;
+	background: linear-gradient(to bottom, lightgray, white);
+	animation-name: intro;
+	animation-duration: 4.5s;
+	animation-timing-function: ease;
+	animation-fill-mode: forwards
+}
+@keyframes intro{
+	0%{height: 100vh; opacity: 1; }
+	60%{height: 100vh; opacity: 1}
+	80%{height: 100vh; opacity: 0}
+	100%{height: 0vh; opacity: 0}
+}
+.intro img{
+	width: 70vw;
+	display: block;
+	max-height: 100vh;
+	object-fit: contain;
+	animation-name: intro-img;
+	animation-duration: 3s;
+	animation-fill-mode: forwards;
+	animation-timing-function: cubic-bezier(.5, 0, .4, 1);
+	position: absolute;
+}
+	@keyframes intro-img{
+		0%{opacity: 0; max-height: 100vh; max-width: 70vw;  
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%) ;}
+		30%{opacity: 1; max-height: 100vh; max-width: 70vw;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);}
+		40%{opacity: 1; max-height: 100vh; max-width: 70vw;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);}
+		99%{
+			opacity: 0.5; max-height: 3.6em; max-width: 5.4em;
+			top:1.8em;
+			left: 2.7em;
+		transform: translate(-50%, -50%)}
+		100%{opacity: 0; max-height: 0; max-width: 0;
+			top:1.8em;
+			left: 2.7em;
+		transform: translate(-50%, -50%)}
+	}
+
+header {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+	position: fixed;
+	width: 100%;
+	z-index: 10;
+	background: linear-gradient(to bottom,rgba(255,255,255,0.95) 85%,transparent);
+}
+div.menu{
+	float: right
+}
+.menupontok{
+    visibility: hidden;
+	opacity: 0;
+    position: fixed;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.95) 90%, transparent);
+    width: 100%;
+    z-index: 1;
+	left: 0;
+	padding-bottom: 2em;
+	list-style-type: none;
+	transition: linear opacity .2s
+}
+.mobilmenuclick{
+	visibility: visible;
+	opacity: 1;
+}
+
+ul.menupontok>li{
+	text-align: center;
+}
+
+ul.menupontok>li>a{
+	text-decoration: none;
+	display:block;
+	padding: 1em;
+	text-transform: uppercase;
+	color: rgba(247,147,30,0.78);
+	border-top: solid thin rgba(247,147,30,0.2);
+	transition: linear .1s;
+}
+ul.menupontok>li>a:hover{
+	color: aliceblue !important;
+	background: linear-gradient(to bottom,orange 85%,transparent) !important
+}
+
+div.logo a.logo img.logo {
+	height: 3.6em
+}
+div.logo, div.menu{
+	display: inline-block
+}
+a.menu{
+	height: 16vw;
+	width: 16vw;
+	background-image: url(https://drive.google.com/uc?export=view&id=1dezELvfq2J8By-5UdQEdMPop1h-VNmKY);
+	display: block;
+	background-size: contain;
+	transition: .2s linear
+}
+
+a.menuikonvaltas{
+	background-image: url(https://drive.google.com/uc?export=view&id=1OaaPV5sxbIeeXI23moM3I10gRmQX88PJ)
+}
+.hitelgomb:hover .hitelmenu{
+	visibility: visible;
+	opacity: 1;
+	height: auto
+}
+
+.hitelmenu>a{
+	text-decoration: none;
+	display:block;
+	padding: 0.8em;
+	text-transform: uppercase;
+	background-color: rgba(249,134,0,0.7);
+	color: aliceblue;
+	border-top:rgba(255,255,255,0.26) solid thin;
+	font-size: 80%
+}
+
+.hitelmenu{
+	visibility: hidden;
+	opacity: 0;
+	text-align: center;
+	width: 100%;
+	height: 0;
+	transition:opacity .5s, visibility .2s;
+	
+}
+.hiteltipusclick{
+	visibility: visible;
+	opacity: 1;
+	height: auto;
+}
+.menuhitelvaltas{
+	background-color: rgba(247,150,32,0.90)!important;
+	color: aliceblue!important
+}
+.kapcsgomb{
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	width: 4em;
+	height: 4em;
+	opacity: .9;
+    z-index: 3
+}
+.hiv{
+    max-width: 3.5em;
+    animation: hiv 10s linear 0s infinite alternate;
+    position: absolute;
+    object-position: center
+}
+.uz{
+    max-width: 3.5em;
+    animation: uz 10s linear 0s infinite alternate;
+    position: absolute;
+    object-position: center
+}
+@keyframes hiv {
+    0%{opacity: 1}
+    20%{opacity: 1}
+    25%{opacity: 0}
+    75%{opacity: 0}
+    80%{opacity: 1}
+    100%{opacity: 1}
+}
+@keyframes uz {
+    0%{opacity: 0}
+    20%{opacity: 0}
+    25%{opacity: 1}
+    75%{opacity: 1}
+    80%{opacity: 0}
+    100%{opacity: 0}   
+}
+
+section.kezdo {
+	display: flex;
+	text-align: center;
+	background-size: cover;
+	position: relative;
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+}
+div.hatter{
+	overflow: hidden;
+	height: 100vh;
+	width: 100vw
+}
+img.kezdohatter{
+    height: 110vh;
+	width: 110vw;
+    object-fit: cover;
+	margin: -5vh -5vw;
+	animation-name: kezdohatter;
+	animation-delay: 3.5s;
+	animation-duration: 3s;
+	animation-fill-mode: forwards;
+	position: relative;
+    will-change: top, opacity
+}
+@keyframes kezdohatter{
+	0%{filter: blur(0)}
+	100%{filter: blur(1vw)}
+}
+div.kezdo {
+	position: absolute;
+	line-height: 2em;
+	animation-name: kezdo;
+	animation-delay: 3.6s;
+	opacity: 0;
+	animation-duration: 1s;
+	animation-fill-mode: forwards
+}
+@keyframes kezdo{
+	0%{opacity: 0}
+	100%{opacity: 1}
+}
+.focim{
+	position: absolute;
+	width: 100%;
+	animation-name: focim;
+	opacity: 0;
+	animation-delay: 3.6s;
+	animation-iteration-count: infinite;
+	animation-duration: 6s;
+    font-size: 140%
+}
+@keyframes focim{
+	0%{opacity: 0}
+	10%{opacity: 1}
+	40%{opacity: 1}
+	50%{opacity: 0}
+	100%{opacity: 0}
+}
+.focim2{
+	animation-name: focim2;
+	opacity: 0;
+	animation-delay: 3.6s;
+	animation-iteration-count: infinite;
+	animation-duration: 6s;
+    font-size: 120%
+}
+@keyframes focim2{
+	0%{opacity: 0}
+	50%{opacity: 0}
+	60%{opacity: 1}
+	90%{opacity: 1}
+	100%{opacity: 0}
+}
+.kezdocim {
+	text-transform: uppercase;
+	font-size: 80%;
+	word-spacing: 4vw;
+	animation-name: kezdocim;
+	animation-fill-mode: forwards;
+	animation-duration: 2s;
+	animation-delay: 4.6s;
+	opacity: 0
+}
+@keyframes kezdocim{
+	0%{opacity: 0}
+	100%{opacity: 1}
+}
+a.ismerjen {
+	text-decoration: none;
+	text-transform: uppercase;
+	border: solid thin #FFFFFF;
+	background: orange;
+	color: white;
+	padding: 0.5em;
+	position: relative;
+	top: 2.5em;
+	font-size: 80%;
+	transition: ease .1s;
+	animation-name: ismerjen;
+	animation-delay: 5.5s;
+	opacity: 0;
+	animation-duration: 2s;
+	animation-fill-mode: forwards
+}
+@keyframes ismerjen{
+	0% {opacity: 0}
+	100% {opacity: 1}
+}
+
+a.ismerjen:hover{
+	color: orange;
+	background-color: white;
+	border: solid thin #FF7E00;
+	font-weight:600
+}
+#bemutatkozas{
+	position: relative;
+	top: -3.6em;
+	display: block
+}
+	.bemutatkozas{
+		display:flex;
+        flex-wrap: wrap;
+        background-color: white
+	}
+div.motto {
+	width: 100%;
+	background:linear-gradient(gray, white);
+	padding: 4em .5em;
+	display: block;
+	position: relative;
+}
+p.motto{
+	padding: 5% 20% 0% 30%;
+	position: relative;
+	font-weight: 800
+}
+p.motto-mi{
+	padding: 5% 0% 5% 30%;
+	font-size: 130%;
+	font-weight: 100
+}
+div.bemutatkoz{
+	width: 100%;
+	padding: 1em 1em 1em 1.6em;
+	position: relative
+}
+
+
+hr.cim{
+	width: 70%;
+	margin: auto
+}
+
+p.bemutatkoz{
+	padding: 1em 0
+}
+h2.cim{
+	text-transform: uppercase;
+	text-align: center;
+	font-weight: 100;
+	padding: 0.8em 0;
+	font-size: 180%
+}
+div.hit-teto{
+	background-image: url(https://drive.google.com/uc?export=view&id=16JplGJUE_DO4SwXLOly3fDT40Tjw9PoJ);
+	background-size: 100% 100%;
+	padding: 1.6em 0;
+	display: block;
+	width: 100%
+	
+}
+h2.cim.hit{
+	color: white;
+	padding: 0;
+	width: 100%;
+	text-indent: 15vw
+}
+ul.hiteltipusok{
+	padding-bottom: 2em
+}
+section.hiteltipusok{
+    width: 100vw;
+    position: relative;
+}
+
+.bg-wr{
+    clip: rect(auto, auto, auto, auto);
+    position: absolute;
+    display: flex;
+	flex-flow: wrap;
+	justify-content: center;
+    top: 0;
+    left: 0;
+    z-index: 2
+}
+img.hatter{
+	min-height: 100vh;
+	position: fixed;
+	z-index: -1;
+	width: 100vw;
+	object-fit:cover;
+	object-position: center;
+    transform: translateZ(0);
+    will-change: transform
+}
+a.hiteltipus-ikon{
+	list-style-type: none;
+	text-decoration: none;
+	text-transform: uppercase;
+	display:inline-flex;
+	height: 4em;
+	align-items: flex-end;
+	color: orange;
+	font-weight: 600;
+	font-size: 110%
+}
+#hiteltipusok{
+	position: relative;
+	top: -3.8em;
+	display: block
+}
+img.ikon{
+	display: block;
+	width: 46%;
+	margin: auto
+}
+
+li.hiteltipus-ikon{
+	text-align: center;
+	width:100%;
+	float: left;
+	padding: 0;
+	display: block;	
+}
+p.hiteltipus-def{
+	display: block;
+	padding: 0.4em 0;
+	color: aliceblue;
+	font-weight: 100;
+	
+}
+#hogyan{
+	position: relative;
+	top: -3.8em;;
+	display: block
+}
+section.hogyan{
+	display: inline-block;
+	padding: 0.8em 0;
+	background: #FFFFFF;
+}
+
+
+div.lepes{
+	width: 100%;
+	float: left;
+	padding: 2em 2.8em ;
+	text-align: center
+}
+div.lepes1{
+	text-align: left;
+	padding: 2% 15% 2%;
+	font-size: 90%
+}
+#elso{
+	background-image: url(https://drive.google.com/uc?export=view&id=1Uq_r1gF36hjj2ga6faBjs9dlAHbL5_Vc);
+	background-position:center;
+	background-size: cover
+}
+#masodik{
+	background-image: url(https://drive.google.com/uc?export=view&id=1yllCEes-xD4trUoZYWwIue0c2mGsjwWf);
+	background-size: cover;
+	background-position: center
+}
+#harmadik{
+	background-image: url(https://drive.google.com/uc?export=view&id=15FNLQivQwsfteVdmkNJSpvmY3oGEw6J-);
+	background-size: cover;
+	background-position:center
+}
+#negyedik{
+	background-image: url(https://drive.google.com/uc?export=view&id=1quBmos0rBa4ikihA8CMUc7vaudTnfgUk);
+	background-size: cover;
+	background-position: center
+}
+section.elony{
+	padding: 1em;
+	background: linear-gradient(to bottom, white, orange);
+	display: flex;
+	flex-wrap: wrap
+}
+.elony-oszlop{
+	width: 100%;
+	margin: auto;
+	float: left
+}
+.elony-oszlop.elony-logo img{
+	display: none
+}
+div.elony{
+	padding: 1em .4em;
+	text-align: center
+}
+.elonycim{
+	padding-bottom: 0.2em;
+	text-transform: uppercase
+}
+h2.cim.elony{
+	width: 100%;
+	text-transform: uppercase;
+	font-size: 180%;
+	font-weight: 100;
+	text-align: center
+}
+
+
+@media (min-width: 650px){
+    .focim, .focim2{
+        font-size: 150%
+    }
+	body{
+		font-size: 2.5vw
+	}
+	h1{
+	    font-size: 150%
+}
+	div.kezdo{
+		font-size: 150%
+	}
+	div.logo a.logo img.logo{
+		height:3.6em;
+	}
+	a.menu{
+		display: none
+	}
+	.menupontok{
+		visibility: visible;
+		opacity: 1
+	}
+	ul.menupontok{
+		display: block;
+		background: transparent;
+		padding: 0;
+		width: inherit;
+		float: right;
+		position: relative;
+
+	}
+	ul.menupontok>li{
+		display: inline-block;
+	}
+	
+	ul.menupontok>li>a{
+		font-size: 80%;
+		border-top: none;
+		padding: 1.8em 1em 1.8em
+	}
+	.hitelmenu{
+		position: fixed;
+		top: 3.6em;
+		left: 0
+	}
+	.hitelmenu>a{
+		background-color: rgba(249,134,0,0.95);	
+	}
+	.kapcsgomb{
+		width: 5em;
+		height: 5em
+	}
+	div.hit-teto{
+		padding: 3em 0
+	}
+	h2.cim{
+		font-size: 200%
+	}
+	h2.cim.hit{
+		position: relative;
+		top: -5vw
+	}
+	a.hiteltipus-ikon{
+		height: 2em
+	}
+	li.hiteltipus-ikon{
+		width: 33%;
+		float: left;
+		padding: 1em 0
+	}
+	li.masodiksor{
+		width: 33%
+	}
+	div.lepes{
+		width: 50%
+	}
+	section.elony{
+		background-image: url(https://drive.google.com/uc?export=view&id=1zbEhNl1YaJysk8Hr1YdYAwi3sAbHDOii)!important;
+		background-size:contain;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-color: rgba(255,255,255,0.60);
+		padding: 0
+		
+	}
+	div.elony{
+		width: 50%;
+		float: right;
+		background-color: rgba(255,255,255,0.86)
+	}
+	h2.elony{
+		background-image:linear-gradient(to bottom, white,rgba(255,255,255,0.86))
+	}
+
+}
+@media (min-width: 1025px){
+	body{
+		font-size: 1.4vw
+	}
+	.kapcsgomb{
+		display: none
+	}
+	h2.cim{
+		font-size: 250%!important
+	}
+	div.kezdo{
+		font-size: 200%
+	}
+	a.ismerjen{
+		font-size: 70%
+	}
+	div.motto{
+		width: 37%
+	}
+
+	div.bemutatkoz{
+		width: 63%;
+		padding: 4em
+	}
+	div.hit-teto{
+		padding: 5em
+	}
+	h2.cim.hit{
+		text-indent: 6em
+	}
+	li.hiteltipus-ikon{
+		width: 20%
+	}
+	img.ikon{
+		width: 70%
+	}
+	div.lepes{
+		width: 25%;
+		text-align: center
+	}
+	.lepes1{
+		font-size: 140%;
+		text-align: center
+	}
+	section.elony{
+		padding: 0 1em;
+		background: linear-gradient(to right, orange, white, white, orange)!important;
+	}
+	div.elony{
+		width: 100%
+	}
+	.elony-oszlop{
+		width: 27%;
+		margin: auto;
+		float: left
+	}
+	.elony-oszlop.elony-logo img{
+		display: inline;
+		width: 100%
+	}
+	.elony-oszlop.elony-logo{
+		width: 46%;
+		padding: 0 1em;
+		margin: auto;
+		display: block
+	}
+	h2.elony, div.elony{
+		background: none
+	}
+}
+
